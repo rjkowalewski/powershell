@@ -145,8 +145,8 @@ PROCESS
         IF ($EmailOutput)
         {
             #$EmailBody = $Output | Sort-Object "VM Name" | ConvertTo-Html -Fragment | Out-String
-            $Output | Sort-Object "VM Name" | Export-Csv -Path "$env:TEMP\$EmailSubject.csv" -NoTypeInformation
-            Send-MailMessage -To $EmailTo -From $EmailFrom -Subject $EmailSubject -Body $EmailBody -BodyAsHtml -SmtpServer $EmailSMTP -Attachments "$env:TEMP\$EmailSubject.csv"    
+            $Output | Sort-Object "VM Name" | Export-Csv -Path "$env:TEMP\OldVMSnapshots.csv" -NoTypeInformation
+            Send-MailMessage -To $EmailTo -From $EmailFrom -Subject $EmailSubject -Body $EmailBody -SmtpServer $EmailSMTP -Attachments "$env:TEMP\OldVMSnapshots.csv"    
         }
 
         ELSEIF ($CSVOutput)
