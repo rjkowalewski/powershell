@@ -57,7 +57,7 @@ PARAM (
     [parameter(ParameterSetName='Email',Mandatory=$true)]
     [string]$EmailSubject = "VMware Old Snapshots Report",
     [parameter(ParameterSetName='Email',Mandatory=$true)]
-    [string]$EmailTo = "Joe.Bloggs@example.com",
+    [array]$EmailTo = "Joe.Bloggs@example.com",
     [parameter(ParameterSetName='Email',Mandatory=$true)]
     [string]$EmailFrom = "sender@example.com",
     [parameter(ParameterSetName='Email',Mandatory=$true)]
